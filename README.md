@@ -8,4 +8,4 @@ Based on [rollup-userscript-template](https://github.com/cvzi/rollup-userscript-
 
 Run `npm run serve`
 
-Release ``
+Release `npm run build`
