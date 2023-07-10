@@ -52,12 +52,10 @@ SOFTWARE.
             for (const mutation of mutationsList) {
                 const addedCommitBlocks = this.findAddedCommitBlocks(mutation);
                 addedCommitBlocks.forEach((block) => {
-                    console.log("new commit block", block);
                     this.addCheckboxToCommitBlock(block);
                 });
                 const addedCommitTable = this.findAddedCommitTable(mutation);
                 if (addedCommitTable) {
-                    console.log("new commit table", addedCommitTable);
                     this.addCompareButtonToCommitTable(addedCommitTable);
                 }
             }
@@ -69,7 +67,6 @@ SOFTWARE.
                     // rows in table with aria-label="commit-list"
                     const commitTableQuery = added.querySelector("[aria-label='Commit list'] table")?.parentElement;
                     if (commitTableQuery) {
-                        console.log("commitTableQuery", commitTableQuery);
                         commitTable = commitTableQuery;
                     }
                 }
@@ -83,7 +80,6 @@ SOFTWARE.
                     // rows in table with aria-label="commit-list"
                     const commitTr = added.querySelectorAll("[aria-label='Commit list'] tbody tr");
                     if (commitTr.length > 0) {
-                        console.log("commitTr", commitTr);
                         commitBlockList.push(...Array.from(commitTr));
                     }
                 }

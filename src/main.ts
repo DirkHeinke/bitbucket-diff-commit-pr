@@ -15,13 +15,11 @@ export class BbPrDiff {
     for (const mutation of mutationsList) {
       const addedCommitBlocks = this.findAddedCommitBlocks(mutation);
       addedCommitBlocks.forEach((block) => {
-        console.log("new commit block", block);
         this.addCheckboxToCommitBlock(block);
       });
 
       const addedCommitTable = this.findAddedCommitTable(mutation);
       if (addedCommitTable) {
-        console.log("new commit table", addedCommitTable);
         this.addCompareButtonToCommitTable(addedCommitTable);
       }
     }
@@ -37,7 +35,6 @@ export class BbPrDiff {
         )?.parentElement;
 
         if (commitTableQuery) {
-          console.log("commitTableQuery", commitTableQuery);
           commitTable = commitTableQuery;
         }
       }
@@ -56,7 +53,6 @@ export class BbPrDiff {
         );
 
         if (commitTr.length > 0) {
-          console.log("commitTr", commitTr);
           commitBlockList.push(...Array.from(commitTr));
         }
       }
